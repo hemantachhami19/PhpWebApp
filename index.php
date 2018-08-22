@@ -22,7 +22,7 @@
         <h1>
             <?php
                 $name =isset($_GET['name'])? $_GET['name']:"anybody";
-                echo "Hello ".$name
+                echo "Hello {$name}";
             ?>
         </h1>
     </header>
