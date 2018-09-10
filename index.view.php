@@ -18,7 +18,6 @@
 </head>
 <body>
 <header>
-    <h1>Hello <?php echo $name;?></h1>
 </header>
 
 <ul>

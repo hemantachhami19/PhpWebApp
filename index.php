@@ -1,34 +1,14 @@
 <?php
-$name =isset($_GET['name'])? $_GET['name']:"anybody";
 
-
-Class Task{
-    public $description,$completed;
-    public function __construct($description,$completed =true)
-    {
-        $this->description = $description;
-        $this->completed =$completed;
-    }
-
-    public function isComplete()
-    {
-         return $this->completed;
-    }
-
-    public function complete()
-    {
-        $this->completed = true;
-    }
+try{
+    $pdo = new PDO('mysql:host=127.0.0.1;dbname=todos','root','');
+    $statement =$pdo->prepare('select * from todo');
+    $statement->execute();
+    $tasks = $statement->fetchAll(PDO::FETCH_OBJ);
+}catch (PDOException $e){
+    die('couldnot connect');
 }
-
-$tasks =[
-    new Task('Buy laptop1',false),
-    new Task('Buy laptop2'),
-    new Task('Buy laptop3')
-];
-
 require "index.view.php";
-
 
 
 
