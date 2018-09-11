@@ -1,4 +1,6 @@
 <?php
-$pdo = Connection::make();
-$queryBuilder =new QueryBuilder($pdo);
-return $queryBuilder;
+require 'functions.php';
+require 'database/Connection.php';
+require 'database/QueryBuilder.php';
+
+return new QueryBuilder(Connection::make());
