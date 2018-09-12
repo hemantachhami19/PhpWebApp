@@ -1,10 +1,9 @@
 <?php
-require 'Task.php';
+require 'core/Router.php';
+$database = require 'core/bootstrap.php';
+$router =new Router;
+require 'routes.php';
+$uri =$_SERVER['REQUEST_URI'];
 
-$query =require 'bootstrap.php';
-$tasks = $query->selectAll('todo','Task');
-require "index.view.php";
-
-
-
-
+$router->register($routes);
+require $router->direct($uri);
