@@ -1,9 +1,7 @@
 <?php
 
-$router->register ( [
-''=>'Controllers/index.php',
-'about'=>'Controllers/about.php',
-'about/culture'=>'Controllers/about-culture.php',
-'contact'=>'Controllers/contact.php',
-'names'=>'Controllers/add-names.php'
-]);
+$router->post('name','Controllers/add-name.php');
+$router->get('','Controllers/index.php');
+$router->get('about','Controllers/about.php');
+$router->get('about/culture','Controllers/about-culture.php');
+$router->get('contact','Controllers/contact.php');

@@ -16,9 +16,9 @@ require 'views/partials/head.php';
     <?php endforeach?>
 </ul>
 
-<form method="get" action="/name">
+<form method="post" action="/name">
     <input name="name">
-    <button type="submit"><Submit></Submit></button>
+    <button type="submit">Submit</button>
 
 </form>
 <?php require 'views/partials/foot.php'?>
