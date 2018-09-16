@@ -1,7 +1,4 @@
 <?php
 require 'core/Router.php';
-$router =new Router;
-require 'routes.php';
-$uri =$_SERVER['REQUEST_URI'];
-$router->register($routes);
-require $router->direct($uri);
+$uri = trim($_SERVER['REQUEST_URI'],'/');
+require Router::load('routes.php')->direct($uri);

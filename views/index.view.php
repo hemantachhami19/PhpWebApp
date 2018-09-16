@@ -15,4 +15,10 @@ require 'views/partials/head.php';
         </li>
     <?php endforeach?>
 </ul>
+
+<form method="get" action="/name">
+    <input name="name">
+    <button type="submit"><Submit></Submit></button>
+
+</form>
 <?php require 'views/partials/foot.php'?>
